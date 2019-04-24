@@ -73,7 +73,7 @@ button {
 }
 
 .logo {
-	max-width: 21%;
+	max-width: 30%;
 	margin: 0 auto;
 }
 
