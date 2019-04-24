@@ -1,4 +1,4 @@
-<php?
+
 <style>
   body {
 	font-size: 10pt;
@@ -205,4 +205,3 @@ footer nav a:hover {
     </nav>
   </footer>
 </div>
-?>
