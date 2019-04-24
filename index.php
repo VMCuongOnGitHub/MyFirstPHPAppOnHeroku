@@ -182,7 +182,7 @@ footer nav a:hover {
 </div>
 <div class="search">
   <div class="logo">
-    <img src="http://www.thelogofactory.com/wp-content/uploads/2015/09/fixed-google-logo-font.png" />
+    <img src="https://banner2.kisspng.com/20180330/cew/kisspng-google-i-o-google-logo-google-5abe0c79a921e2.9653675215224044736928.jpg" />
   </div>
   <input class="search-bar" type="search" autofocus x-webkit-speech/>
   <div class="search-nav">
