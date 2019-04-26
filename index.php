@@ -4,9 +4,6 @@
 
 <h1>My first PHP page</h1>
 
-<?php
-echo "Hello abc XYZ!";
-?>
 
 <?php
 
@@ -26,7 +23,7 @@ $stmt->setFetchMode(PDO::FETCH_ASSOC);
 $stmt->execute();
 $resultSet = $stmt->fetchAll();
 foreach ($resultSet as $row) {
-	echo $row['name'] . '\n';
+	echo $row['id'] . ' ' . $row['name'] '<br>';
 }
 ?>
 </body>
