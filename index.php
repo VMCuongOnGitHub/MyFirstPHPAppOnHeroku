@@ -5,6 +5,7 @@
 <h1>My first PHP page</h1>
 
 
+
 <?php
 
 $sql = "SELECT id, name FROM mytable";
@@ -23,7 +24,7 @@ $stmt->setFetchMode(PDO::FETCH_ASSOC);
 $stmt->execute();
 $resultSet = $stmt->fetchAll();
 foreach ($resultSet as $row) {
-	echo $row['id'] . ' ' . $row['name'] '<br>';
+	echo $row['name'] . '<br>';
 }
 ?>
 </body>
