@@ -8,11 +8,6 @@
       $db['db_database_name'],
       ltrim($db["path"], "/")
   ));
-  // Array of infor about host, user, password, database name. Just for easy to manage.
-  $db['db_host'] = 'localhost';
-  $db['db_user'] = 'root';
-  $db['db_password'] = '';
-  $db['db_database_name'] = 'assignment-2-web';
 
   // Convert all valuable in to UPPERCASE
   foreach ($db as $key => $value) {
