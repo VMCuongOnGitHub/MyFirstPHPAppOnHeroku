@@ -20,11 +20,13 @@
   if (isset($_POST['submit'])) {
     $username = $_GET['username'];
     $password = $_GET['password'];
+    if ($username == $resultSet['username'] && $password ==  $resultSet['user_password']){
+      echo 'yessss';
+    }
   }
+  
 
-  if ($username == $resultSet['username'] && $password ==  $resultSet['user_password']){
-    echo 'yessss';
-  }
+
 ?>
   <div class="container">
     <header>
