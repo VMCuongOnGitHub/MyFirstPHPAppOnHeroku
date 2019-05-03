@@ -19,12 +19,12 @@
   $resultSet = $stmt->fetchAll();
 
   if (isset($_POST['submit'])) {
-    $username = $_GET['username'];
-    $password = $_GET['password'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
     echo $username;
     echo $password;
-    
+
     foreach ($resultSet as $row) {
       if ($username == $row['username'] && $password ==  $row['user_password']){
         echo 'yessss';
