@@ -1,6 +1,4 @@
 <?php require 'header.php'; ?>
-
-<div id="wrapper">
   <div class="container">
     <header>
       <div class="row">
@@ -31,6 +29,5 @@
       </div>
     </header>
   </div>
-</div>
 
 <?php require 'footer.php'; ?>
