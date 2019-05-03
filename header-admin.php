@@ -1,10 +1,4 @@
-<?php
-  ob_start();
-  session_start();
-  defined("DS") ? null : define("DS", DIRECTORY_SEPARATOR);
-  defined("UPLOAD_DIRECTORY") ? null : define("UPLOAD_DIRECTORY", __DIR__ . DS . "images");
-?>
-<?php require "connect-admin.php" ?>
+
 <?php require "function.php" ?>
 <!DOCTYPE php>
 <php lang="en">

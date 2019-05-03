@@ -1,32 +1,4 @@
-<?php require 'header.php'; ?>
-<?php
-
-  if (isset($_POST['username'])) {
-      $user = sanitizeString($_POST['username']);
-      $pass = sanitizeString($_POST['password']);
-      if ($user == "" || $pass == "") {
-          $error = "Not all fields was entered";
-      } else {
-          $token = passwordToToken($pass);
-          $query = "SELECT * FROM Users WHERE username = '$user' AND password = '$token'";
-
-          $check_user_query = mysqli_query($connection, $query);
-          $row = mysqli_fetch_assoc($check_user_query);
-
-          if ($check_user_query->num_rows == 0) {
-              $error = "Username/Password invalid";
-          } else {
-              session_start();
-              $_SESSION['uId'] = mysqli_fetch_array($result)[0];
-              $_SESSION['user'] = $user;
-              $_SESSION['pass'] = $pass;
-
-              header("Location: backend.php"); //redirect to index.php
-              die("You already log in. Please <a href='admin/backend.php'>click here</> to continue.");
-          }
-      }
-  }
-?>
+<?php require 'header-admin.php'; ?>
 <div class="container">
 
   <header>
