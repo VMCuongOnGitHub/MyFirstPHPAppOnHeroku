@@ -1,10 +1,32 @@
 <?php require 'header.php'; ?>
+
+<?php
+  $db = parse_url(getenv("DATABASE_URL"));
+  $pdo = new PDO("pgsql:" . sprintf(
+      "host=%s;port=%s;user=%s;password=%s;dbname=%s",
+      $db["host"],
+      $db["port"],
+      $db["user"],
+      $db["pass"],
+      ltrim($db["path"], "/")
+  ));
+
+  $sql = "SELECT username, user_password FROM users";
+  $stmt = $pdo->prepare($sql);
+  //Thiết lập kiểu dữ liệu trả về
+  $stmt->setFetchMode(PDO::FETCH_ASSOC);
+  $stmt->execute();
+  $resultSet = $stmt->fetchAll();
+  foreach ($resultSet as $row) {
+  	echo $row['name'] . '\n';
+  }
+?>
   <div class="container">
     <header>
       <div class="row">
         <div class="col-sm-4"></div>
 
-        <div class="col-sm-4 col-sm-offset-5">
+        <div class="col-sm-4">
           <h1 class="text-center">Login to Admin</h1>
           <form class="text-center" action="" method="post" enctype="multipart/form-data">
 
