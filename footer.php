@@ -3,9 +3,6 @@
       <footer>
         <ul class="nav justify-content-center">
           <li class="nav-item">
-            <a class="nav-link" href="index.php">Home</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="category.php">Category</a>
           </li>
           <li class="nav-item">
@@ -19,5 +16,6 @@
     </div>
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
+
   </body>
 </html>

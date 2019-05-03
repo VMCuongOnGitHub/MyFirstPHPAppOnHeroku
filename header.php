@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,4 +19,3 @@
 </head>
 
 <body>
-<?php require "navigation-bar.php" ?>
