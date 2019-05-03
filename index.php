@@ -1,4 +1,4 @@
-<?php require 'header-admin.php'; ?>
+<?php require 'header.php'; ?>
 <div class="container">
 
   <header>
