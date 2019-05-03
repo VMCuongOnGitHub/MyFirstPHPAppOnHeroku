@@ -9,6 +9,7 @@
       } else {
           $token = passwordToToken($pass);
           $query = "SELECT * FROM Users WHERE username = '$user' AND password = '$token'";
+
           $check_user_query = mysqli_query($connection, $query);
           $row = mysqli_fetch_assoc($check_user_query);
 
@@ -20,8 +21,8 @@
               $_SESSION['user'] = $user;
               $_SESSION['pass'] = $pass;
 
-              header("Location: admin/backend.php"); //redirect to index.php
-              die("You already log in. Please <a href='admin/index.php'>click here</> to continue.");
+              header("Location: backend.php"); //redirect to index.php
+              die("You already log in. Please <a href='admin/backend.php'>click here</> to continue.");
           }
       }
   }
