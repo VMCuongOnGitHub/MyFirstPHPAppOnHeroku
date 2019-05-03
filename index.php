@@ -29,5 +29,6 @@
       <div class="col-sm-4"></div>
     </div>
   </header>
+
 </div>
 <?php require 'footer.php'; ?>

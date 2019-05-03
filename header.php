@@ -19,4 +19,5 @@
     <link href="css/sb-admin.css" rel="stylesheet">
 </head>
 
+<body>
 <?php require "navigation-bar.php" ?>
