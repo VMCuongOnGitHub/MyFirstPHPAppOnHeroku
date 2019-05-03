@@ -17,16 +17,13 @@
   $stmt->setFetchMode(PDO::FETCH_ASSOC);
   $stmt->execute();
   $resultSet = $stmt->fetchAll();
-  foreach ($resultSet as $row) {
+  if (isset($_POST['submit'])) {
+    $username = $_GET['username'];
+    $password = $_GET['password'];
+  }
 
-    if (isset($_POST['submit'])) {
-      $username = $_GET['username'];
-      $password = $_GET['password'];
-    }
-
-    if ($username == $row['username'] && $password ==  $row['user_password']){
-      echo 'yessss';
-    }
+  if ($username == $resultSet['username'] && $password ==  $resultSet['user_password']){
+    echo 'yessss';
   }
 ?>
   <div class="container">
