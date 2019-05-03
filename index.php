@@ -18,7 +18,8 @@
   $stmt->execute();
   $resultSet = $stmt->fetchAll();
   foreach ($resultSet as $row) {
-  	echo $row['name'] . '\n';
+  	echo $row['username'] . '\n';
+    echo $row['user_password'] . '\n';
   }
 ?>
   <div class="container">
