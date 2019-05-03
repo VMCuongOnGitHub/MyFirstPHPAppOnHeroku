@@ -21,11 +21,15 @@
   if (isset($_POST['submit'])) {
     $username = $_GET['username'];
     $password = $_GET['password'];
+
+    echo $username;
+    echo $password;
+    
     foreach ($resultSet as $row) {
       if ($username == $row['username'] && $password ==  $row['user_password']){
         echo 'yessss';
       }else{
-        echo 'noo';
+        echo 'nooooo';
       }
     }
 
