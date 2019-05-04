@@ -35,8 +35,6 @@
 
   }
 
-
-
 ?>
   <div class="container">
     <header>
@@ -45,7 +43,7 @@
 
         <div class="col-sm-4">
           <h1 class="text-center">Login to Admin</h1>
-          <form class="text-center" action="" method="post" enctype="multipart/form-data">
+          <form class="text-center" method="post" enctype="multipart/form-data">
 
             <div class="form-group">
               <label>Username</label>
