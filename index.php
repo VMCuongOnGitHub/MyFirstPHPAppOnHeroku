@@ -29,7 +29,17 @@
       if ($username == $row['username'] && $password ==  $row['user_password']){
         echo 'yessss';
       }else{
-        echo 'nooooo';
+        echo '
+          <script>
+          var txt;
+          var r = confirm("Wrong! Wanna try again?");
+          if (r == true) {
+            txt = "You pressed OK!";
+          } else {
+            txt = "You pressed Cancel!";
+          }
+          </script>
+        ';
       }
     }
 
@@ -56,8 +66,9 @@
             </div>
 
             <div class="form-group">
-              <input type="submit" name="submit" class="btn btn-primary" >
+              <input type="submit" name="submit" class="btn btn-secondary" >
             </div>
+            <button type="button" name="button" class="btn btn-primary">Sign up</button>
 
           </form>
         </div>
