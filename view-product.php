@@ -4,11 +4,12 @@
     <table class="table table-hover">
         <thead>
           <tr>
-            <th>Id</th>
+            <th>ID</th>
             <th>Product Name</th>
             <th>Description</th>
             <th>Price</th>
             <th>Image</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -19,13 +20,15 @@
           $stmt->setFetchMode(PDO::FETCH_ASSOC);
           $stmt->execute();
           $resultSet = $stmt->fetchAll();
-          
+
           foreach ($resultSet as $row) {
+
             $product_id = $row['product_id'];
             $product_name = $row['product_name'];
             $short_description = $row['short_description'];
             $price = $row['price'];
             $product_image = $row['product_image'];
+
             echo "
             <tr>
                 <td>{$product_id}</td>
