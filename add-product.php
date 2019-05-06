@@ -7,12 +7,9 @@
     $price = $_POST['price'];
     $product_image = $_POST['product_image'];
 
-    $sql = "INSERT INTO product VALUES (?,?,?,?)";
+    $sql = "INSERT INTO product(product_name, price, short_description, product_image) VALUES (?,?,?,?)";
     $stmt = $pdo->prepare($sql);
-    //Thiết lập kiểu dữ liệu trả về
-    // $stmt->setFetchMode(PDO::FETCH_ASSOC);
     $stmt->execute([$product_name, $price, $short_description, $product_image]);
-    // $resultSet = $stmt->fetchAll();
 
   }
 ?>
