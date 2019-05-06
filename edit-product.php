@@ -13,6 +13,7 @@
 <?php
   if (isset($_POST['update'])) {
     $getproduct_id = $_GET['product_id'];
+    
     $product_id = $_POST['product_id'];
     $product_name = $_POST['product_name'];
     $short_description = $_POST['short_description'];
@@ -25,12 +26,11 @@
     'description' => $short_description,
     'price' => $price,
     'image' => $product_image,
-    'getID' => $getproduct_id
     ];
 
     $sql = "UPDATE product
             SET product_id = ?, product_name = ?, short_description = ?,price = ?, product_image = ?
-            WHERE product_id = ?";
+            WHERE product_id = $getproduct_id";
 
     $stmt = $pdo->prepare($sql);
     $stmt->execute($data);
