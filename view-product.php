@@ -9,7 +9,7 @@
             <th>Description</th>
             <th>Price</th>
             <th>Image</th>
-            <th></th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody>
@@ -31,7 +31,7 @@
 
             echo "
             <tr>
-                <td>{$product_id}</td>
+                <td>$product_id</td>
                 <td>
                   <a href='edit-product.php?product_id={$product_id}'><p>{$product_name}</p></a>
                 </td>
