@@ -10,44 +10,15 @@
       ltrim($db["path"], "/")
   ));
 ?>
-<?php
-  if (isset($_POST['update'])) {
-    $getproduct_id = $_GET['product_id'];
-    
-    $product_id = $_POST['product_id'];
-    $product_name = $_POST['product_name'];
-    $short_description = $_POST['short_description'];
-    $price = $_POST['price'];
-    $product_image = $_POST['product_image'];
-
-    $data = [
-    'id' => $product_id,
-    'name' => $product_name,
-    'description' => $short_description,
-    'price' => $price,
-    'image' => $product_image,
-    ];
-
-    $sql = "UPDATE product
-            SET product_id = ?, product_name = ?, short_description = ?,price = ?, product_image = ?
-            WHERE product_id = $getproduct_id";
-
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute($data);
-
-    header('Location: view-product.php');
-    exit();
-  }
-?>
 
 <form action="" method="POST" enctype="multipart/form-data">
   <div class="col-md-8">
 
     <?php
       if (isset($_GET['product_id'])) {
-        $product_id = $_GET['product_id'];
+        $product_idd = $_GET['product_id'];
       }
-      $sql = "SELECT * FROM product WHERE product_id = $product_id";
+      $sql = "SELECT * FROM product WHERE product_id = $product_idd";
       $stmt = $pdo->prepare($sql);
       //Thiết lập kiểu dữ liệu trả về
       $stmt->setFetchMode(PDO::FETCH_ASSOC);
@@ -88,9 +59,35 @@
           <br>
           <hr>
           <br>
-          <input type='submit' name='update' class='btn btn-primary btn-lg' value='Update'>
+          <input type='submit' name='update' class='btn btn-primary btn-lg'>
         </div>
       ";
+      }
+
+      if (isset($_POST['update'])) {
+        $product_id = $_POST['product_id'];
+        $product_name = $_POST['product_name'];
+        $short_description = $_POST['short_description'];
+        $price = $_POST['price'];
+        $product_image = $_POST['product_image'];
+
+        $data = [
+        'id' => $product_id,
+        'name' => $product_name,
+        'description' => $short_description,
+        'price' => $price,
+        'image' => $product_image,
+        ];
+
+        $sql = "UPDATE product
+                SET product_id = ?, product_name = ?, short_description = ?,price = ?, product_image = ?
+                WHERE product_id = $product_idd";
+
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute($data);
+
+        header('Location: view-product.php');
+        exit();
       }
     ?>
   </div>
