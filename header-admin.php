@@ -9,6 +9,7 @@
       ltrim($db["path"], "/")
   ));
 ?>
+
 <?php require "function.php" ?>
 <!DOCTYPE php>
 <php lang="en">
