@@ -27,17 +27,11 @@
 
     foreach ($resultSet as $row) {
       if ($username == $row['username'] && $password ==  $row['user_password']){
-        echo 'yessss';
+        header("Location: add-user.php");
       }else{
         echo '
           <script>
-          var txt;
-          var r = confirm("Wrong! Wanna try again?");
-          if (r == true) {
-            txt = "You pressed OK!";
-          } else {
-            txt = "You pressed Cancel!";
-          }
+            alert("WRONG! Wanna try again?");
           </script>
         ';
       }
@@ -66,9 +60,10 @@
             </div>
 
             <div class="form-group">
-              <input type="submit" name="submit" class="btn btn-secondary" >
+              <input type="submit" name="submit" class="btn btn-dark" >
+              <button type="button" name="button" class="btn btn-primary">Sign up</button>
             </div>
-            <button type="button" name="button" class="btn btn-primary">Sign up</button>
+
 
           </form>
         </div>
