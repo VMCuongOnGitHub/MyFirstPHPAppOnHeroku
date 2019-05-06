@@ -17,7 +17,8 @@
 
     foreach ($resultSet as $row) {
       if ($username == $row['username'] && $password ==  $row['user_password']){
-        header("Location: view-product.php");
+        sprint($resultSet);
+        //header("Location: view-product.php");
       }else{
         echo '
           <script>
