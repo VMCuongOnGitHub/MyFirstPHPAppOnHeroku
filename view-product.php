@@ -48,7 +48,7 @@
                   <p>{$short_description}</p>
                 </td>
                 <td>
-                  <p>${$price}</p>
+                  <p><span>$</span>{$price}</p>
                 </td>
                 <td>
                   <img src='{$product_image}' alt='{$product_name}' height='80px'>
