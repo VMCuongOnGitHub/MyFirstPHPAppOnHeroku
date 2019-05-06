@@ -1,7 +1,7 @@
 <?php require 'header-admin.php'; ?>
 <?php
 if (isset($_GET['product_id'])) {
-  $user_id = $_GET['product_id'];
+  $product_id = $_GET['product_id'];
 
   $sql = "DELETE FROM product WHERE product_id = {$product_id}";
   $stmt = $pdo->prepare($sql);
@@ -9,7 +9,7 @@ if (isset($_GET['product_id'])) {
   $stmt->setFetchMode(PDO::FETCH_ASSOC);
   $stmt->execute();
 
-  header('Location: edit-delete-product.php');
+  header('Location: view-product.php');
   exit();
 }
 ?>

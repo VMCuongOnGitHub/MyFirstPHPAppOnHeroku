@@ -30,7 +30,7 @@
             <tr>
                 <td>{$product_id}</td>
                 <td>
-                  <a href='edit-user.php?user_id={$product_id}'><p>{$product_name}</p></a>
+                  <a href='edit-product.php?product_id={$product_id}'><p>{$product_name}</p></a>
                 </td>
                 <td>
                   <p>{$short_description}</p>

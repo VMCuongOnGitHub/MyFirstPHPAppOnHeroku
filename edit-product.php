@@ -25,29 +25,41 @@
       if (isset($_GET['user_id'])) {
         $user_id = $_GET['user_id'];
       }
-      // SELECT the elements that you want to display from database
-      $query = "SELECT * FROM Users WHERE user_id = '{$user_id}'";
-      // Make a connection to database and execute the querry
-      $select_user_query = mysqli_query($connection, $query);
-      // Use while loop to show the value
-      $row = mysqli_fetch_assoc($select_user_query);
+      $sql = "SELECT * FROM product";
+      $stmt = $pdo->prepare($sql);
+      //Thiết lập kiểu dữ liệu trả về
+      $stmt->setFetchMode(PDO::FETCH_ASSOC);
+      $stmt->execute();
+      $resultSet = $stmt->fetchAll();
 
-      $user_id = $row['user_id'];
-      $username = $row['username'];
-      $password = $row['password'];
+      foreach ($resultSet as $row) {
+
+      $product_name = $_POST['product_name'];
+      $short_description = $_POST['short_description'];
+      $price = $_POST['price'];
+      $product_image = $_POST['product_image'];
 
       echo "
         <div class='form-group'>
-          <label for='user-title'>Product Name</label>
-          <input type='text' name='product-name' class='form-control' value='{$username}' required>
+        <label for='user-title'>Product name</label>
+          <input type='text' name='product-name' class='form-control' value='$product_name'>
         </div>
-        <div class='form-group'>
-          <label for='user-title'>Password</label>
-          <input type='text' name='password' class='form-control' value='{$password}' required>
+        <div>
+        <label for='user-title'>Description</label>
+          <input type='text' name='description' class='form-control' value='$short_description'>
         </div>
-        <div class='form-group'>
-          <input type='submit' name='update' class='btn btn-primary btn-lg' value='Update'>
+        <div>
+        <label for='user-title'>Price</label>
+          <input type='text' name='price' class='form-control' value='$price'>
         </div>
+        <div>
+        <label for='user-title'>Product Image</label>
+          <input type='text' name='product_image' class='form-control' value='$product_image'>
+        </div>
+        <br>
+        <hr>
+        <br>
+        <input type='submit' name='publish' class='btn btn-primary btn-lg' value='Update'>
       ";
     ?>
   </div>

@@ -44,7 +44,7 @@
                 </button>
                 <a class="navbar-brand" href="index.php">InitMe Admin</a>
 
-                <a class="navbar-brand text-right" href="../index.php">Logout</a>
+                <a class="navbar-brand text-right" href="index.php">Logout</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -63,7 +63,10 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li>
-                        <a href="edit-product.php"><i class="fa fa-fw fa-table"></i> Edit-delete Products</a>
+                        <a href="view-product.php"><i class="fa fa-fw fa-table"></i> View Products</a>
+                    </li>
+                    <li>
+                        <a href="edit-product.php"><i class="fa fa-fw fa-table"></i> Edit Products</a>
                     </li>
                     <li>
                         <a href="add-product.php"><i class="fa fa-fw fa-wrench"></i> Add Product</a>

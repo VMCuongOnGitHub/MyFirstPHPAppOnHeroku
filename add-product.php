@@ -33,6 +33,9 @@
       <label for='user-title'>Product Image</label>
         <input type='text' name='product_image' class='form-control' value=''>
       </div>
+      <br>
+      <hr>
+      <br>
       <input type='submit' name='publish' class='btn btn-primary btn-lg' value='Publish'>
   </div>
 </form>

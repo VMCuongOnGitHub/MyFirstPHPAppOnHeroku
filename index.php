@@ -7,7 +7,7 @@
   $stmt->setFetchMode(PDO::FETCH_ASSOC);
   $stmt->execute();
   $resultSet = $stmt->fetchAll();
-
+  sprint($resultSet);
   if (isset($_POST['submit'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -17,7 +17,7 @@
 
     foreach ($resultSet as $row) {
       if ($username == $row['username'] && $password ==  $row['user_password']){
-        header("Location: add-user.php");
+        header("Location: view-product.php");
       }else{
         echo '
           <script>
