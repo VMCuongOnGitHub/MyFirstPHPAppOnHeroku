@@ -69,7 +69,7 @@
     var confirmmessage = "Are you sure to delete this product?";
     var message = "Action Was Cancelled";
     if (confirm(confirmmessage)) {
-      $(".validate").attr("href", "delete-product.php?user_id=<?php echo "{$product_id}"; ?>");
+      $(".validate").attr("href", "delete-product.php?product_id=<?php echo "{$product_id}"; ?>");
     } else {
          alert(message);
     }
