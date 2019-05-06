@@ -37,24 +37,23 @@
   <div class="col-md-8">
 
     <?php
-
-      if (isset($_GET['product_id'])) {
-        $product_id = $_GET['product_id'];
-      }
-      $sql = "SELECT * FROM product WHERE product_id = $product_id";
-      $stmt = $pdo->prepare($sql);
-      //Thiết lập kiểu dữ liệu trả về
-      $stmt->setFetchMode(PDO::FETCH_ASSOC);
-      $stmt->execute();
-      $resultSet = $stmt->fetchAll();
-
-      foreach ($resultSet as $row) {
-
-      $product_id = $row['product_id'];
-      $product_name = $row['product_name'];
-      $short_description = $row['short_description'];
-      $price = $row['price'];
-      $product_image = $row['product_image'];
+      // if (isset($_GET['product_id'])) {
+      //   $product_id = $_GET['product_id'];
+      // }
+      // $sql = "SELECT * FROM product WHERE product_id = $product_id";
+      // $stmt = $pdo->prepare($sql);
+      // //Thiết lập kiểu dữ liệu trả về
+      // $stmt->setFetchMode(PDO::FETCH_ASSOC);
+      // $stmt->execute();
+      // $resultSet = $stmt->fetchAll();
+      //
+      // foreach ($resultSet as $row) {
+      //
+      // $product_id = $row['product_id'];
+      // $product_name = $row['product_name'];
+      // $short_description = $row['short_description'];
+      // $price = $row['price'];
+      // $product_image = $row['product_image'];
 
       echo "
         <div>
