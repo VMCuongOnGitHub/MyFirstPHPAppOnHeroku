@@ -10,7 +10,7 @@
       $db["pass"],
       ltrim($db["path"], "/")
   ));
-  
+
   if (isset($_POST['submit'])) {
     $product_id = $_POST['product_id'];
     $product_name = $_POST['product_name'];
@@ -18,9 +18,20 @@
     $price = $_POST['price'];
     $product_image = $_POST['product_image'];
 
-    $sql = "INSERT INTO product(product_id, product_name, price, short_description, product_image) VALUES (?,?,?,?,?)";
+    $data = [
+    'id' => $product_id,
+    'name' => $product_name,
+    'description' => $short_description,
+    'price' => $price,
+    'image' => $product_image,
+    ];
+    $sql = "INSERT INTO users (name, surname, sex) VALUES (:name, :surname, :sex)";
+    $stmt= $pdo->prepare($sql);
+    $stmt->execute($data);
+
+    $sql = "INSERT INTO product(product_id, product_name, price, short_description, product_image) VALUES (:id,:name,:description,:price,:image)";
     $stmt = $pdo->prepare($sql);
-    $stmt->execute([$product_id,$product_name, $price, $short_description, $product_image]);
+    $stmt->execute($data);
 
   }
 ?>
