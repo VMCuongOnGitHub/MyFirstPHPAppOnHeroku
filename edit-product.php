@@ -11,26 +11,26 @@
   ));
 ?>
 <?php
-  if (isset($_POST['update'])) {
-    $product_id = $_GET['product_id'];
-
-    $product_name = $_POST['product_name'];
-    $short_description = $_POST['short_description'];
-    $price = $_POST['price'];
-    $product_image = $_POST['product_image'];
-
-    // $sql = "UPDATE product
-    //         SET product_id = $product_id, product_name = $product_name, short_description = $short_description,price = $price, product_image = $product_image
-    //         WHERE product_id = $product_id";
-    $stmt = $pdo->prepare($sql);
-    //Thiết lập kiểu dữ liệu trả về
-    $stmt->setFetchMode(PDO::FETCH_ASSOC);
-    $stmt->execute();
-    $resultSet = $stmt->fetchAll();
-
-    header('Location: view-product.php');
-    exit();
-  }
+  // if (isset($_POST['update'])) {
+  //   $product_id = $_GET['product_id'];
+  //
+  //   $product_name = $_POST['product_name'];
+  //   $short_description = $_POST['short_description'];
+  //   $price = $_POST['price'];
+  //   $product_image = $_POST['product_image'];
+  //
+  //   $sql = "UPDATE product
+  //           SET product_id = $product_id, product_name = $product_name, short_description = $short_description,price = $price, product_image = $product_image
+  //           WHERE product_id = $product_id";
+  //   $stmt = $pdo->prepare($sql);
+  //   //Thiết lập kiểu dữ liệu trả về
+  //   $stmt->setFetchMode(PDO::FETCH_ASSOC);
+  //   $stmt->execute();
+  //   $resultSet = $stmt->fetchAll();
+  //
+  //   header('Location: view-product.php');
+  //   exit();
+  // }
 ?>
 
 <form action="" method="POST" enctype="multipart/form-data">
@@ -41,7 +41,7 @@
       if (isset($_GET['product_id'])) {
         $product_id = $_GET['product_id'];
       }
-      $sql = "SELECT * FROM product";
+      $sql = "SELECT * FROM product WHERE product_id = $product_id";
       $stmt = $pdo->prepare($sql);
       //Thiết lập kiểu dữ liệu trả về
       $stmt->setFetchMode(PDO::FETCH_ASSOC);
