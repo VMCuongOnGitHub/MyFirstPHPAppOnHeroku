@@ -3,12 +3,12 @@
 <?php
   $db = parse_url(getenv("DATABASE_URL"));
   $pdo = new PDO("pgsql:" . sprintf(
-      "host=%s;port=%s;user=%s;password=%s;dbname=%s",
-      $db["host"],
-      $db["port"],
-      $db["user"],
-      $db["pass"],
-      ltrim($db["path"], "/")
+    "host=%s;port=%s;user=%s;password=%s;dbname=%s",
+    $db["host"],
+    $db["port"],
+    $db["user"],
+    $db["pass"],
+    ltrim($db["path"], "/")
   ));
 
   if (isset($_POST['submit'])) {
@@ -23,16 +23,12 @@
     'name' => $product_name,
     'description' => $short_description,
     'price' => $price,
-    'image' => $product_image,
+    'image' => $product_image
     ];
-    $sql = "INSERT INTO users (name, surname, sex) VALUES (:name, :surname, :sex)";
-    $stmt= $pdo->prepare($sql);
-    $stmt->execute($data);
 
-    $sql = "INSERT INTO product(product_id, product_name, price, short_description, product_image) VALUES (:id,:name,:description,:price,:image)";
+    $sql = "INSERT INTO product(product_id, product_name, price, short_description, product_image) VALUES (:id,:name,:price,:description,:image)";
     $stmt = $pdo->prepare($sql);
     $stmt->execute($data);
-
   }
 ?>
 
