@@ -40,7 +40,7 @@
 
             echo "
             <tr>
-                <td>$product_id</td>
+                <td>{$product_id}</td>
                 <td>
                   <a href='edit-product.php?product_id={$product_id}'><p>{$product_name}</p></a>
                 </td>
@@ -51,7 +51,7 @@
                   <p>${$price}</p>
                 </td>
                 <td>
-                  <p>{$product_image}</p>
+                  <img src='{$product_image}' alt='{$product_name}'>
                 </td>
                 <td>
                   <a onClick='confirmation()' class='btn btn-danger validate' ><span class='glyphicon glyphicon-remove'></span></a>
