@@ -2,20 +2,25 @@
 
 <?php
   if (isset($_POST['publish'])) {
+    $product_id = $_POST['product_id'];
     $product_name = $_POST['product_name'];
     $short_description = $_POST['short_description'];
     $price = $_POST['price'];
     $product_image = $_POST['product_image'];
 
-    $sql = "INSERT INTO product(product_name, price, short_description, product_image) VALUES (?,?,?,?)";
+    $sql = "INSERT INTO product(product_id, product_name, price, short_description, product_image) VALUES (?,?,?,?,?)";
     $stmt = $pdo->prepare($sql);
-    $stmt->execute([$product_name, $price, $short_description, $product_image]);
+    $stmt->execute([$product_id,$product_name, $price, $short_description, $product_image]);
 
   }
 ?>
 
 <form action="" method="POST" enctype="multipart/form-data">
   <div class="col-md-8">
+      <div class='form-group'>
+      <label for='user-title'>Product ID</label>
+        <input type='text' name='product-id' class='form-control' value=''>
+      </div>
       <div class='form-group'>
       <label for='user-title'>Product name</label>
         <input type='text' name='product-name' class='form-control' value=''>
