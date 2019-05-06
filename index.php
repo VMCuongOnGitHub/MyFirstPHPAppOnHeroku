@@ -7,16 +7,15 @@
   $stmt->setFetchMode(PDO::FETCH_ASSOC);
   $stmt->execute();
   $resultSet = $stmt->fetchAll();
+
   if (isset($_POST['submit'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    echo $username;
-    echo $password;
-
     foreach ($resultSet as $row) {
       if ($username == $row['username'] && $password ==  $row['user_password']){
-        sprint($resultSet);
+        sprintf($resultSet);
+        gettype($resultSet);
         //header("Location: view-product.php");
       }else{
         echo '

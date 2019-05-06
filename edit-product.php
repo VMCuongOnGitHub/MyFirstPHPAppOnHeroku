@@ -2,19 +2,23 @@
 
 <?php
   if (isset($_POST['update'])) {
-    $user_id = $_GET['user_id'];
+    $product_id = $_GET['product_id'];
+    
+    $product_name = $_POST['product_name'];
+    $short_description = $_POST['short_description'];
+    $price = $_POST['price'];
+    $product_image = $_POST['product_image'];
 
-    $token = passwordToToken($_POST['password']);
-    $query = "UPDATE Users SET
-    username = '{$_POST['username']}',
-    password = '{$token}'
-    WHERE user_id = '{$user_id}'
-    ";
+    $sql = "UPDATE product
+            SET product_name = $product_name, short_description = $short_description,price = $price, product_image = $product_image
+            WHERE product_id = $product_id;";
+    $stmt = $pdo->prepare($sql);
+    //Thiết lập kiểu dữ liệu trả về
+    $stmt->setFetchMode(PDO::FETCH_ASSOC);
+    $stmt->execute();
+    $resultSet = $stmt->fetchAll();
 
-    // Make a connection to database and execute the querry
-    $select_user_query = mysqli_query($connection, $query);
-
-    header('Location: edit-delete-user.php');
+    header('Location: view-product.php');
     exit();
   }
 ?>
@@ -22,8 +26,8 @@
 <form action="" method="POST" enctype="multipart/form-data">
   <div class="col-md-8">
     <?php
-      if (isset($_GET['user_id'])) {
-        $user_id = $_GET['user_id'];
+      if (isset($_GET['product_id'])) {
+        $product_id = $_GET['product_id'];
       }
       $sql = "SELECT * FROM product";
       $stmt = $pdo->prepare($sql);
@@ -34,13 +38,16 @@
 
       foreach ($resultSet as $row) {
 
-      $product_name = $_POST['product_name'];
-      $short_description = $_POST['short_description'];
-      $price = $_POST['price'];
-      $product_image = $_POST['product_image'];
+      $product_name = $row['product_name'];
+      $short_description = $row['short_description'];
+      $price = $row['price'];
+      $product_image = $row['product_image'];
 
       echo "
         <div class='form-group'>
+        <label for='user-title'>$product_id</label>
+        </div>
+        <br>
         <label for='user-title'>Product name</label>
           <input type='text' name='product-name' class='form-control' value='$product_name'>
         </div>
@@ -59,7 +66,7 @@
         <br>
         <hr>
         <br>
-        <input type='submit' name='publish' class='btn btn-primary btn-lg' value='Update'>
+        <input type='submit' name='update' class='btn btn-primary btn-lg' value='Update'>
       ";
     ?>
   </div>
