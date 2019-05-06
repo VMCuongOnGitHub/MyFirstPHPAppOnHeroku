@@ -80,7 +80,7 @@
         ];
 
         $sql = "UPDATE product
-                SET product_id = ?, product_name = ?, short_description = ?,price = ?, product_image = ?
+                SET product_id = :id, product_name = :name, short_description = :description,price = :price, product_image = :image
                 WHERE product_id = $product_idd";
 
         $stmt = $pdo->prepare($sql);

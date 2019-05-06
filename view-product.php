@@ -51,7 +51,7 @@
                   <p>${$price}</p>
                 </td>
                 <td>
-                  <img src='{$product_image}' alt='{$product_name}'>
+                  <img src='{$product_image}' alt='{$product_name}' height='80px'>
                 </td>
                 <td>
                   <a onClick='confirmation()' class='btn btn-danger validate' ><span class='glyphicon glyphicon-remove'></span></a>
