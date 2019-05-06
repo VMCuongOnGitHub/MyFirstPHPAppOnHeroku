@@ -49,8 +49,8 @@
               <input type="submit" name="submit" class="btn btn-primary" value="Login">
             </div>
           </form>
-
-          <h1 class="align-middle">If you want to sign up, contact this number : <b>091 000 999</b></h1>
+          <br>
+          <h3 class="align-middle" style="text-align: center;">If you want to sign up, contact this number : <b>091 000 999</b></h3>
         </div>
 
         <div class="col-sm-4"></div>
