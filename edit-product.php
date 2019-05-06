@@ -17,8 +17,7 @@
     $stmt->setFetchMode(PDO::FETCH_ASSOC);
     $stmt->execute();
     $resultSet = $stmt->fetchAll();
-
-
+    
     header('Location: view-product.php');
     exit();
   }
