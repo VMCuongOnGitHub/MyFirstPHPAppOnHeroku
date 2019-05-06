@@ -34,6 +34,7 @@
 
 <form action="" method="POST" enctype="multipart/form-data">
   <div class="col-md-8">
+    <br>
     <div class="form-group">
     <label for="user-title">Product ID</label>
       <input type="text" name="product-id" class="form-control" value="">
@@ -57,7 +58,7 @@
     <br>
     <hr>
     <br>
-    <input type="submit" name="submit" class="btn btn-primary btn-lg" value="Publish">
+    <input type="submit" name="submit" class="btn btn-primary btn-lg">
   </div>
 </form>
 <?php require 'footer-admin.php' ?>
