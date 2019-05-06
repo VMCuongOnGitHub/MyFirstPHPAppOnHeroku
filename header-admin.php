@@ -1,4 +1,14 @@
-
+<?
+  $db = parse_url(getenv("DATABASE_URL"));
+  $pdo = new PDO("pgsql:" . sprintf(
+      "host=%s;port=%s;user=%s;password=%s;dbname=%s",
+      $db["host"],
+      $db["port"],
+      $db["user"],
+      $db["pass"],
+      ltrim($db["path"], "/")
+  ));
+?>
 <?php require "function.php" ?>
 <!DOCTYPE php>
 <php lang="en">
@@ -53,29 +63,10 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li>
-                        <a href="index.php"><i class="fa fa-fw fa-table"></i> Edit-delete Products</a>
+                        <a href="edit-product.php"><i class="fa fa-fw fa-table"></i> Edit-delete Products</a>
                     </li>
                     <li>
                         <a href="add-product.php"><i class="fa fa-fw fa-wrench"></i> Add Product</a>
-                    </li>
-                    <li>
-                        <a href="edit-delete-category.php"><i class="fa fa-fw fa-table"></i> Edit-delete Category</a>
-                    </li>
-                    <li>
-                        <a href="add-category.php"><i class="fa fa-fw fa-wrench"></i> Add Category</a>
-                    </li>
-                    <li>
-                        <a href="edit-delete-slide.php"><i class="fa fa-fw fa-table"></i> Edit-delete Slide</a>
-                    </li>
-                    <li>
-                        <a href="add-slide.php"><i class="fa fa-fw fa-wrench"></i> Add Slide</a>
-                    </li>
-
-                    <li>
-                        <a href="edit-delete-user.php"><i class="fa fa-fw fa-table"></i> Edit-delete User</a>
-                    </li>
-                    <li>
-                        <a href="add-user.php"><i class="fa fa-fw fa-wrench"></i> Add User</a>
                     </li>
                 </ul>
             </div>

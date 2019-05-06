@@ -1,3 +1,14 @@
+<?
+  $db = parse_url(getenv("DATABASE_URL"));
+  $pdo = new PDO("pgsql:" . sprintf(
+      "host=%s;port=%s;user=%s;password=%s;dbname=%s",
+      $db["host"],
+      $db["port"],
+      $db["user"],
+      $db["pass"],
+      ltrim($db["path"], "/")
+  ));
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +19,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>InitMe Admin</title>
+    <title>ATN Admin</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <script src="js/jquery.js"></script>

@@ -5,33 +5,41 @@
         <thead>
           <tr>
             <th>Id</th>
-            <th>Username</th>
-            <th>Password</th>
+            <th>Product Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Image</th>
           </tr>
         </thead>
         <tbody>
           <?php
-          // SELECT the elements that you want to display from database
-          $query = "
-            SELECT *
-            FROM Users
-          ";
-          // Make a connection to database and execute the querry
-          $select_all_user_query = mysqli_query($connection, $query);
-          // Use while loop to show the value
-          while ($row = mysqli_fetch_assoc($select_all_user_query)) {
-            $user_id = $row['user_id'];
-            $user_name = $row['username'];
-            $user_password = $row['password'];
+          $sql = "SELECT * FROM product";
+          $stmt = $pdo->prepare($sql);
+          //Thiết lập kiểu dữ liệu trả về
+          $stmt->setFetchMode(PDO::FETCH_ASSOC);
+          $stmt->execute();
+          $resultSet = $stmt->fetchAll();
 
+          foreach ($resultSet as $row) {
+            $product_id = $row['product_id'];
+            $product_name = $row['product_name'];
+            $short_description = $row['short_description'];
+            $price = $row['price'];
+            $product_image = $row['product_image'];
             echo "
             <tr>
-                <td>{$user_id}</td>
+                <td>{$product_id}</td>
                 <td>
-                  <a href='edit-user.php?user_id={$user_id}'><p>{$user_name}</p></a>
+                  <a href='edit-user.php?user_id={$product_id}'><p>{$product_name}</p></a>
                 </td>
                 <td>
-                  <p>{$user_password}</p>
+                  <p>{$short_description}</p>
+                </td>
+                <td>
+                  <p>${$price}</p>
+                </td>
+                <td>
+                  <p>{$product_image}</p>
                 </td>
                 <td>
                   <a onClick='confirmation()' class='btn btn-danger validate' ><span class='glyphicon glyphicon-remove'></span></a>
@@ -46,10 +54,10 @@
 </div>
 <script type="text/javascript">
   function confirmation() {
-    var confirmmessage = "Are you sure to delete this user?";
+    var confirmmessage = "Are you sure to delete this product?";
     var message = "Action Was Cancelled";
     if (confirm(confirmmessage)) {
-      $(".validate").attr("href", "delete-user.php?user_id=<?php echo "{$user_id}"; ?>");
+      $(".validate").attr("href", "delete-product.php?user_id=<?php echo "{$product_id}"; ?>");
     } else {
          alert(message);
     }

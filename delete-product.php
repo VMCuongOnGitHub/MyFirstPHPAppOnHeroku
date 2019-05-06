@@ -1,14 +1,16 @@
 <?php require 'header-admin.php'; ?>
-
 <?php
 if (isset($_GET['product_id'])) {
-  $product_id = $_GET['product_id'];
+  $user_id = $_GET['product_id'];
 
-  $query = "DELETE FROM Product WHERE product_id = {$product_id};";
-  $delete_product_query = mysqli_query($connection, $query);
+  $sql = "DELETE FROM product WHERE product_id = {$product_id}";
+  $stmt = $pdo->prepare($sql);
+  //Thiết lập kiểu dữ liệu trả về
+  $stmt->setFetchMode(PDO::FETCH_ASSOC);
+  $stmt->execute();
 
-  header('Location: index.php');
+  header('Location: edit-delete-product.php');
   exit();
 }
 ?>
-<?php require 'footer-admin.php' ?>
+<?php require 'footer-admin.php'; ?>
