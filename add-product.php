@@ -10,9 +10,10 @@
     $sql = "INSERT INTO product VALUES (?,?,?,?)";
     $stmt = $pdo->prepare($sql);
     //Thiết lập kiểu dữ liệu trả về
-    $stmt->setFetchMode(PDO::FETCH_ASSOC);
+    // $stmt->setFetchMode(PDO::FETCH_ASSOC);
     $stmt->execute([$product_name, $price, $short_description, $product_image]);
-    $resultSet = $stmt->fetchAll();
+    // $resultSet = $stmt->fetchAll();
+
   }
 ?>
 

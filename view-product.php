@@ -18,7 +18,6 @@
           //Thiết lập kiểu dữ liệu trả về
           $stmt->setFetchMode(PDO::FETCH_ASSOC);
           $stmt->execute();
-          $resultSet = $stmt->fetchAll();
 
           foreach ($resultSet as $row) {
             $product_id = $row['product_id'];
