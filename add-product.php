@@ -37,23 +37,23 @@
     <br>
     <div class="form-group">
     <label for="user-title">Product ID</label>
-      <input type="text" name="product-id" class="form-control" value="">
+      <input type="text" name="product-id" class="form-control">
     </div>
     <div class="form-group">
     <label for="user-title">Product name</label>
-      <input type="text" name="product-name" class="form-control" value="">
+      <input type="text" name="product-name" class="form-control">
     </div>
     <div>
     <label for="user-title">Description</label>
-      <input type="text" name="description" class="form-control" value="">
+      <input type="text" name="description" class="form-control">
     </div>
     <div>
     <label for="user-title">Price</label>
-      <input type="text" name="price" class="form-control" value="">
+      <input type="text" name="price" class="form-control">
     </div>
     <div>
     <label for="user-title">Product Image</label>
-      <input type="text" name="product_image" class="form-control" value="">
+      <input type="text" name="product_image" class="form-control">
     </div>
     <br>
     <hr>
