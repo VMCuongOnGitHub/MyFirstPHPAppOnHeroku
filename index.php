@@ -32,7 +32,7 @@
         <div class="col-sm-4"></div>
 
         <div class="col-sm-4">
-          <h1 class="text-center">Login to Admin</h1>
+          <h1 class="text-center">Welcome to ATN Cloud System</h1>
           <form class="text-center" method="post" enctype="multipart/form-data">
 
             <div class="form-group">
@@ -47,11 +47,10 @@
 
             <div class="form-group">
               <input type="submit" name="submit" class="btn btn-primary" value="Login">
-              <button type="button" name="button" class="btn btn-primary signup-button">Sign up</button>
             </div>
-
-
           </form>
+
+          <h1 class="align-middle">If you want to sign up, contact this number : <b>091 000 999</b></h1>
         </div>
 
         <div class="col-sm-4"></div>
