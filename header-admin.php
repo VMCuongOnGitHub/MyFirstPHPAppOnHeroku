@@ -31,7 +31,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php">InitMe Admin</a>
+                <a class="navbar-brand" href="index.php">ATN Cloud System</a>
 
                 <a class="navbar-brand text-right" href="index.php">Logout</a>
             </div>
@@ -53,9 +53,6 @@
                 <ul class="nav navbar-nav side-nav">
                     <li>
                         <a href="view-product.php"><i class="fa fa-fw fa-table"></i> View Products</a>
-                    </li>
-                    <li>
-                        <a href="edit-product.php"><i class="fa fa-fw fa-table"></i> Edit Products</a>
                     </li>
                     <li>
                         <a href="add-product.php"><i class="fa fa-fw fa-wrench"></i> Add Product</a>
