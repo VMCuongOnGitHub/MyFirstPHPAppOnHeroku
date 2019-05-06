@@ -7,7 +7,6 @@
   $stmt->setFetchMode(PDO::FETCH_ASSOC);
   $stmt->execute();
   $resultSet = $stmt->fetchAll();
-  sprint($resultSet);
   if (isset($_POST['submit'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
