@@ -8,6 +8,7 @@ if (isset($_GET['product_id'])) {
   //Thiết lập kiểu dữ liệu trả về
   $stmt->setFetchMode(PDO::FETCH_ASSOC);
   $stmt->execute();
+  $resultSet = $stmt->fetchAll();
 
   header('Location: view-product.php');
   exit();
