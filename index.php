@@ -46,8 +46,8 @@
             </div>
 
             <div class="form-group">
-              <input type="submit" name="submit" class="btn btn-dark" value="Login">
-              <button type="button" name="button" class="btn btn-primary">Sign up</button>
+              <input type="submit" name="submit" class="btn btn-primary" value="Login">
+              <button type="button" name="button" class="btn btn-primary signup-button">Sign up</button>
             </div>
 
 
@@ -58,5 +58,4 @@
       </div>
     </header>
   </div>
-
 <?php require 'footer.php'; ?>
