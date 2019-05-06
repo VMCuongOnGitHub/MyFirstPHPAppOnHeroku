@@ -1,7 +1,17 @@
 <?php require 'header-admin.php'; ?>
 
 <?php
-  if (isset($_POST['publish'])) {
+  $db = parse_url(getenv("DATABASE_URL"));
+  $pdo = new PDO("pgsql:" . sprintf(
+      "host=%s;port=%s;user=%s;password=%s;dbname=%s",
+      $db["host"],
+      $db["port"],
+      $db["user"],
+      $db["pass"],
+      ltrim($db["path"], "/")
+  ));
+  
+  if (isset($_POST['submit'])) {
     $product_id = $_POST['product_id'];
     $product_name = $_POST['product_name'];
     $short_description = $_POST['short_description'];
@@ -40,7 +50,7 @@
       <br>
       <hr>
       <br>
-      <input type='submit' name='publish' class='btn btn-primary btn-lg' value='Publish'>
+      <input type='submit' name='submit' class='btn btn-primary btn-lg' value='Publish'>
   </div>
 </form>
 <?php require 'footer-admin.php' ?>
