@@ -19,7 +19,7 @@
     $product_image = $_POST['product_image'];
 
     $sql = "UPDATE product
-            SET product_name = $product_name, short_description = $short_description,price = $price, product_image = $product_image
+            SET product_id = $product_id, product_name = $product_name, short_description = $short_description,price = $price, product_image = $product_image
             WHERE product_id = $product_id";
     $stmt = $pdo->prepare($sql);
     //Thiết lập kiểu dữ liệu trả về
@@ -58,18 +58,20 @@
 
       foreach ($resultSet as $row) {
 
+      $product_id = $row['product_id'];
       $product_name = $row['product_name'];
       $short_description = $row['short_description'];
       $price = $row['price'];
       $product_image = $row['product_image'];
 
       echo "
-        <div class='form-group'>
-        <label for='user-title'>$product_id</label>
+        <div>
+        <label for='user-title'>ID</label>
+          <input type='text' name='product_id' class='form-control' value='$product_id'>
         </div>
         <br>
         <label for='user-title'>Product name</label>
-          <input type='text' name='product-name' class='form-control' value='$product_name'>
+          <input type='text' name='product_name' class='form-control' value='$product_name'>
         </div>
         <div>
         <label for='user-title'>Description</label>
