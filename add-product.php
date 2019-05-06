@@ -45,7 +45,7 @@
     </div>
     <div>
     <label for="user-title">Description</label>
-      <input type="text" name="description" class="form-control">
+      <input type="text" name="short_description" class="form-control">
     </div>
     <div>
     <label for="user-title">Price</label>
