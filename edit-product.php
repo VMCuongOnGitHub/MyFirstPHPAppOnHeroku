@@ -19,9 +19,9 @@
     $price = $_POST['price'];
     $product_image = $_POST['product_image'];
 
-    $sql = "UPDATE product
-            SET product_id = $product_id, product_name = $product_name, short_description = $short_description,price = $price, product_image = $product_image
-            WHERE product_id = $product_id";
+    // $sql = "UPDATE product
+    //         SET product_id = $product_id, product_name = $product_name, short_description = $short_description,price = $price, product_image = $product_image
+    //         WHERE product_id = $product_id";
     $stmt = $pdo->prepare($sql);
     //Thiết lập kiểu dữ liệu trả về
     $stmt->setFetchMode(PDO::FETCH_ASSOC);
