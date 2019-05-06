@@ -43,11 +43,11 @@
     <br>
     <div class="form-group">
     <label for="user-title">Product ID</label>
-      <input type="text" name="product-id" class="form-control">
+      <input type="text" name="product_id" class="form-control">
     </div>
     <div class="form-group">
     <label for="user-title">Product name</label>
-      <input type="text" name="product-name" class="form-control">
+      <input type="text" name="product_name" class="form-control">
     </div>
     <div>
     <label for="user-title">Description</label>
