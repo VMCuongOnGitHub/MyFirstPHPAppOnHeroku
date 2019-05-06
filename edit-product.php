@@ -19,14 +19,21 @@
     $price = $_POST['price'];
     $product_image = $_POST['product_image'];
 
+    $data = [
+    'id' => $product_id,
+    'name' => $product_name,
+    'description' => $short_description,
+    'price' => $price,
+    'image' => $product_image
+    ];
+
     $sql = "UPDATE product
-            SET product_id = $product_id, product_name = $product_name, short_description = $short_description,price = $price, product_image = $product_image
+            SET product_id = ?, product_name = ?, short_description = ?,price = ?, product_image = ?
             WHERE product_id = $product_id";
     $stmt = $pdo->prepare($sql);
     //Thiết lập kiểu dữ liệu trả về
     $stmt->setFetchMode(PDO::FETCH_ASSOC);
-    $stmt->execute();
-    $resultSet = $stmt->fetchAll();
+    $stmt->execute($data);
 
     header('Location: view-product.php');
     exit();

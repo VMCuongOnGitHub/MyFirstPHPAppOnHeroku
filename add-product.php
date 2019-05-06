@@ -18,12 +18,6 @@
     $price = $_POST['price'];
     $product_image = $_POST['product_image'];
 
-    echo $product_id;
-    echo $product_name;
-    echo $short_description;
-    echo $price;
-
-
     $data = [
     'id' => $product_id,
     'name' => $product_name,
